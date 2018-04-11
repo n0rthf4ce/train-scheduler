@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css">
+    <title>Train Scheduler</title>
+</head>
+
+</html>
+
+<body>
+
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6>Train Name</h6>
+                            <input type="text" id="m-train-name" class="form-control" value="">
+                            <h6>Destination</h6>
+                            <input type="text" id="m-destination" class="form-control" value="">
+                            <h6>Next Train
+                                <span class="text-warning" id="m-time-warning"></span>
+                            </h6>
+                            <input type="text" id="m-next-train" class="form-control" value="">
+                            <h6>Frequency -- in minutes
+                                <span class="text-warning" id="m-freq-warning"></span>
+                            </h6>
+                            <input type="text" id="m-frequency" class="form-control" value="">
+                        </div>
+                    </div>
+                </div>
+                <!-- Begin buttons -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="update-data" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Title -->
+    <div class="jumbotron">
+        <h1>Train Scheduler</h1>
+        <p></p>
+    </div>
+    <div class="container">
+        <!-- Target div for results -->
+        <div class="card">
+            <h6 class="card-header" id="masthead">
+                Current Train Schedule
+            </h6>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="card">
+            <h6 class="card-header" id="masthead">Add Train</h6>
+
+
+            <div class="card-body">
+                <h6>Train Name</h6>
+                <input type="text" id="train-name" class="form-control" value="">
+                <h6>Destination</h6>
+                <input type="text" id="destination" class="form-control" value="">
+                <h6>First Train Time -- in military time (HH:MM)
+                    <span class="text-warning" id="time-warning"></span>
+                </h6>
+                <input type="text" id="first-train-time" class="form-control" value="">
+                <h6>Frequency -- in minutes
+                    <span class="text-warning" id="freq-warning"></span>
+                </h6>
+                <input type="text" id="frequency" class="form-control" value="">
+
+                <!-- Begin buttons -->
+                <button id="submit" type="button" class="btn btn-primary">Submit</button>
+                <button id="clear_fields" type="button" class="btn btn-primary">Clear</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+<script type="text/javascript" src="assets/javascript/moment.js"></script>
+<script type="text/javascript" src="assets/javascript/script.js"></script>
+
+</html>
