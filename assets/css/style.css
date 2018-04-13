@@ -1,0 +1,17 @@
+#display-trains{
+    margin-bottom: 2em;
+}
+#add-train{
+    margin-bottom: 2em;
+}
+input{
+    margin-bottom: 2em;
+}
+.jumbotron{
+    background-color: darkslategray;
+    color: white;
+}
+.card-header{
+    background-color: darkslategray;
+    color: white;
+}
