@@ -8,6 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
     <title>Train Scheduler</title>
 </head>
 
@@ -30,7 +31,7 @@
                             <input type="text" id="m-train-name" class="form-control" value="">
                             <h6>Destination</h6>
                             <input type="text" id="m-destination" class="form-control" value="">
-                            <h6>Next Train
+                            <h6>Next Train -- in military time (HH:MM)
                                 <span class="text-warning" id="m-time-warning"></span>
                             </h6>
                             <input type="text" id="m-next-train" class="form-control" value="">
@@ -43,8 +44,8 @@
                 </div>
                 <!-- Begin buttons -->
                 <div class="modal-footer">
+                    <button id="update-data" type="button" class="btn btn-info">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="update-data" type="button" class="btn btn-primary">Save changes</button>
                 </div>
 
             </div>
@@ -58,8 +59,8 @@
     </div>
     <div class="container">
         <!-- Target div for results -->
-        <div class="card">
-            <h6 class="card-header" id="masthead">
+        <div class="card" id="display-trains">
+            <h6 class="card-header">
                 Current Train Schedule
             </h6>
             <table class="table">
@@ -75,16 +76,12 @@
                     </tr>
                 </thead>
                 <tbody>
-
                 </tbody>
             </table>
         </div>
 
-
-        <div class="card">
-            <h6 class="card-header" id="masthead">Add Train</h6>
-
-
+        <div class="card" id="add-train">
+            <h6 class="card-header">Add Train</h6>
             <div class="card-body">
                 <h6>Train Name</h6>
                 <input type="text" id="train-name" class="form-control" value="">
@@ -100,8 +97,8 @@
                 <input type="text" id="frequency" class="form-control" value="">
 
                 <!-- Begin buttons -->
-                <button id="submit" type="button" class="btn btn-primary">Submit</button>
-                <button id="clear_fields" type="button" class="btn btn-primary">Clear</button>
+                <button id="submit" type="button" class="btn btn-info">Submit</button>
+                <button id="clear_fields" type="button" class="btn btn-danger">Clear</button>
             </div>
         </div>
     </div>

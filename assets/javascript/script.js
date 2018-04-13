@@ -101,7 +101,7 @@ function displayTrains(sv, key) {
     } else {
         newRow.append("<td>" + minutesAway + "</td>");
     }
-    newRow.append("<td><button type='button' class='update btn btn-primary' data-toggle='modal' data-target='#updateModal' data-key='" + key + "'>Update</button></td>")
+    newRow.append("<td><button type='button' class='update btn btn-info' data-toggle='modal' data-target='#updateModal' data-key='" + key + "'>Update</button></td>")
         .append("<td><button class='remove btn btn-danger' data-key='" + key + "'>Remove</button></td>");
     $("tbody").append(newRow);
 }
